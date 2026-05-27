@@ -28,10 +28,16 @@ class SystemJIRAIngestion(BaseIngestion):
                             if chunk:
                                 yield chunk
                             
-        exception Exception as e:
-        	self.logger.error(f"[-] Error: {str(e)", exc_info=True}
+        except Exception as e:
+        	self.logger.error(f"[-] Error: {str(e)}", exc_info=True)
 
     def _extract(self, data):
-        return
+        try:
+            self.total_cnt += len(data)
+            chunk = []
+            
+            
+        except Exception as e:
+            self logger.error(f"[-] Error: {str(e)}", exc_info=True)
     
     def _transform(self, data, file_index=None):
