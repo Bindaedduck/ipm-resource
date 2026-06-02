@@ -1,0 +1,12 @@
+[Unit]
+Description=IPM Data Pipeline
+After=network.target
+
+[Service]
+Type=oneshot
+ExecStart=/절대경로/run_ipm_pipeline.sh
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
