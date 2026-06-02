@@ -1,0 +1,10 @@
+[Unit]
+Description=Timer for IPM Data Pipeline Service
+
+[Timer]
+OnCalendar=Tue *_*_* 07:00:00
+Persistent=true
+Unit=ipm_pipeline.service
+
+[Install]
+WantedBy=timers.target
